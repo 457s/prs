@@ -2,7 +2,8 @@
 # keep structure of ROOT with like ~\swq\prs
 
 @{
-"ROOT"="C:\users\thinkpad\swq\prs"
 "pg_local_postgres"="String"
+"ROOT"="C:\users\thinkpad\swq\prs"
+"pg_local_tianren"="String"
 }
 
