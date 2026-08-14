@@ -1,0 +1,8 @@
+# copy to "env\config.psd1" and input value
+# keep structure of ROOT with like ~\swq\prs
+
+@{
+"ROOT"="C:\users\thinkpad\swq\prs"
+"pg_local_postgres"="String"
+}
+
