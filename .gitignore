@@ -1,5 +1,6 @@
 .*/
 !.gitignore
+*.code-workspace
 
 
 /ai/works/*
