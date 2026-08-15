@@ -26,6 +26,6 @@ def write_config(jsonname: str, jsond: dict, encoding: str) -> None:
 
 def shell_config() -> dict:
     """return jsond"""
-    with open(ROOT.parent / "shell" / "env" / "config.json") as f:
+    with open(ROOT.parent / "env" / "config.json") as f:
         jsond = json.load(f)
     return jsond

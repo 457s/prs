@@ -118,7 +118,7 @@ function wq_aiwork {
     }
     else { $dest_folder_name = Get-Date -Format "yy年MM月dd日HH时mm分ss秒" }
     if ($file_paths) {
-        $dest_folder_path_old = Join-Path (Split-Path $PSScriptRoot -Parent) "ai\works\$dest_folder_name"
+        $dest_folder_path_old = Join-Path $PSScriptRoot "ai\works\$dest_folder_name"
         if (Test-Path $dest_folder_path_old) { $c = 0; $e = '!'; do { $c++; $dest_folder_path = $dest_folder_path_old + ($e * $c) }while (Test-Path $dest_folder_path) }
         else { $dest_folder_path = $dest_folder_path_old }
         New-Item -ItemType Directory -Path $dest_folder_path

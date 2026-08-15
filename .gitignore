@@ -18,8 +18,8 @@ _*/
 /mine/config/.readed.json
 
 
-/shell/env/*
-!/shell/env/.gitkeep
-/shell/tests/*
-!/shell/tests/.gitkeep
+/env/*
+!env/.gitkeep
+/tests/*
+!/tests/.gitkeep
 
