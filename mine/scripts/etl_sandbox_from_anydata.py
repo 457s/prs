@@ -47,12 +47,12 @@ def main():
     elif result == "p1":
         folderpath = helper.input_folderpath()
         powertablename = helper.input_clean("input powertable name：")
-        with helper.Timer(""):
+        with helper.Timer("powertables_to_sandbox"):
             count = sandbox.powertables_to_sandbox(folderpath, powertablename)
             print(f"done <{count} files>", end="")
     elif result == "p0":
         path = helper.input_clean("input file path：")
         powertablename = helper.input_clean("input powertable name：")
-        with helper.Timer(""):
+        with helper.Timer("powertable_to_sandbox"):
             sandbox.powertable_to_sandbox(path, powertablename)
             print("done", end="")
