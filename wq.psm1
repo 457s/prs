@@ -142,3 +142,7 @@ function wq_init {
 }
 Set-Alias -Name wq_it -Value wq_init
 
+function wq_gt {
+    wq_home; git status
+}
+
