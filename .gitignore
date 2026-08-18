@@ -19,7 +19,7 @@ _*/
 
 
 /env/*
-!env/.gitkeep
+!env/profile.ps1
 /tests/*
 !/tests/.gitkeep
 
