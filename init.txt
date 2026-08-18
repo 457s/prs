@@ -1,9 +1,11 @@
-# copy to "env\config.psd1" and input value
-# keep structure of ROOT with like ~\swq\prs
+
+# check path of prs with like ~\swq\prs
+# shell version is pwsh 7
+# python version is 3.11
+# copy the context to "env\config.psd1" and input value
 
 @{
-"ROOT"="C:\users\thinkpad\swq\prs"
-"pg_local_postgres"="String"
 "pg_local_tianren"="String"
+"pg_local_postgres"="String"
 }
 
