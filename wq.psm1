@@ -146,3 +146,22 @@ function wq_gt {
     wq_home; git status
 }
 
+function wq_explorer {
+    param(
+        [string]$search
+    )
+    (Get-StartApps | Where-Object { $_.Name -match $search }) | 
+    ForEach-Object -Begin { $runid = 0; $result = @() }-Process { $runid++; $result += [PSCustomObject]@{
+            RunID = $runid
+            Name  = $_.Name
+            AppID = $_.AppID
+        } }-End { $result | Format-Table -AutoSize -Wrap }
+    if ($result) {
+        $run = Read-Host 'input run id (Enter as 1)'
+        if ($run) { $run = $run }else { $run = 1 }
+        $result | Where-Object { $_.RunID -eq $run } |
+        ForEach-Object { if ($_.AppID -match '[a-zA-Z]:') { explorer.exe $_.AppID }else { explorer.exe "shell:appsfolder\$($_.AppID)" } }
+    }
+    else { Write-Host 'not find with startapps' }
+}
+Set-Alias -Name wq_r -Value wq_explorer
