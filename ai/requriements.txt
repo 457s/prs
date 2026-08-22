@@ -22,6 +22,7 @@ pandas==3.0.3
 pdfminer.six==20260107
 pikepdf==10.10.0
 pillow==12.3.0
+pip==24.0
 pycparser==3.0
 pymupdf==1.28.0
 pyparsing==3.3.2
@@ -32,6 +33,7 @@ pytrends==4.9.2
 pywin32==312
 reportlab==5.0.0
 requests==2.34.2
+setuptools==65.5.0
 six==1.17.0
 tinycss2==1.5.1
 typing_extensions==4.16.0
