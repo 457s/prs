@@ -1,10 +1,9 @@
-<# following these step:
-1.check path of prs with like ~\swq\prs
-2.check pwsh version is 7.
-3.check python version is 3.11
-4.copy the context to "env\config.psd1" and input value
+<# following these steps:
+1.check the path of prs with like ~\swq\prs
+2.check the version of pwsh is 7.
+3.check the version of python is 3.11
+4.copy all the context to "env\config.psd1" and input the values of hash table
 5.execute the file as init.ps1
-6.make venv of pr and install with pip.txt
 #>
 
 @{
