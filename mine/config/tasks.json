@@ -1,6 +1,6 @@
 {
     "这是个任务示例": [
         "scripts.execute_sql",
-        "scripts.etl_sandbox_from_anydata"
+        "scripts.etl_sandbox"
     ]
 }
