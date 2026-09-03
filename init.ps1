@@ -28,7 +28,7 @@ $clear_config = @{}
 foreach ($kv in $config.getenumerator()) { $clear_config[$kv.key] = $kv.value.gettype().name }
 $clear_config.GetEnumerator() | ForEach-Object { $out = "" } { $out += "`"$($_.key)`"=`"$($_.value)`"`n" }
 "<# following these steps:
-1.check the path of prs with like ~\swq\prs
+1.check the path of prs with like ~\wq\prs
 2.check the version of pwsh is 7.
 3.check the version of python is 3.11
 4.copy all the context to `"env\config.psd1`" and input the values of hash table

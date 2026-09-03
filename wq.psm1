@@ -11,19 +11,19 @@ Set-Alias -Name wq_hl -Value wq_help
 
 
 function wq_home {
-    Set-Location ~\swq\prs
+    Set-Location ~\wq\prs
     try { & .\.venv\scripts\activate.ps1 }catch {}
 }
 Set-Alias -Name wq_hm -Value wq_home
 
 function wq_mine {
-    Set-Location ~\swq\prs\mine
+    Set-Location ~\wq\prs\mine
     try { & .\.venv\scripts\activate.ps1 }catch {}
 }
 Set-Alias -Name wq_mi -Value wq_mine
 
 function wq_ai {
-    Set-Location ~\swq\prs\ai
+    Set-Location ~\wq\prs\ai
     try { & .\.venv\scripts\activate.ps1 }catch {}
 }
 
