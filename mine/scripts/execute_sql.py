@@ -16,7 +16,7 @@ def main():
         m[i] = p
         print(f"{m[i]} -> id.{i}")
     iid = int(input("input execute id："))
-    database_d = config.read_config("database", "utf-8")
+    database_d = config.read_config(".database", "utf-8")
     shell_config = config.shell_config()
     ks = {}
     cou = 0

@@ -1,24 +1,8 @@
-.*/
-_*/
+.*
 !.gitignore
-
+!.gitkeep
+_*
 
 /ai/works/*
-!/ai/works/.gitkeep
-
-
 /mine/backup/*
-!/mine/backup/.gitkeep
 /mine/sandbox/*
-!/mine/sandbox/.gitkeep
-/mine/tests/*
-!/mine/tests/.gitkeep
-/mine/config/readed.json
-/mine/config/.readed.json
-
-
-/env/*
-!env/profile.ps1
-/tests/*
-!/tests/.gitkeep
-

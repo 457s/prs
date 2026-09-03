@@ -11,7 +11,7 @@ from tools import helper
 def main():
     table_name = input("input table_name：")
     folderpath, sheet_name = helper.input_folderpath_sheetname()
-    database_d = config.read_config("database", "utf-8")
+    database_d = config.read_config(".database", "utf-8")
     shell_config = config.shell_config()
     ks = {}
     cou = 0
@@ -21,7 +21,7 @@ def main():
         print(f"{ks[cou]}->id_{cou}")
     database_k = ks[int(helper.input_clean("input database id：")[0])]
     database_url = shell_config[database_k]
-    readed_d = config.read_config("readed", "utf-8")
+    readed_d = config.read_config(".readed", "utf-8")
     engine = create_engine(database_url)
 
     with helper.Timer("extract_noreaded_excels"):
@@ -43,5 +43,5 @@ def main():
         print("done", end="")
 
     with helper.Timer("write_config on readed_paths"):
-        config.write_config("readed", readed_d, "utf-8")
+        config.write_config(".readed", readed_d, "utf-8")
         print("done", end="")

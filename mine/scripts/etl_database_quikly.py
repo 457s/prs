@@ -23,7 +23,7 @@ def main():
             break
     table_schema = helper.input_clean("input table_schema：")
     table_name = helper.input_clean("input table_name：")
-    database_d = config.read_config("database", "utf-8")
+    database_d = config.read_config(".database", "utf-8")
     shell_config = config.shell_config()
     ks = {}
     cou = 0
