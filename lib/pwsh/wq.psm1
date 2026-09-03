@@ -10,11 +10,10 @@
 Set-Alias -Name wq_hl -Value wq_help
 
 
-function wq_home {
+function wq_prs {
     Set-Location ~\wq\prs
     try { & .\.venv\scripts\activate.ps1 }catch {}
 }
-Set-Alias -Name wq_hm -Value wq_home
 
 function wq_mine {
     Set-Location ~\wq\prs\mine
@@ -29,10 +28,10 @@ function wq_ai {
 
 
 
-function wq_homespace {
-    wq_home; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
+function wq_prsspace {
+    wq_prs; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
 }
-Set-Alias -Name wq_hms -Value wq_homespace
+Set-Alias -Name wq_prss -Value wq_prsspace
 
 function wq_minespace {
     wq_mine; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
@@ -63,15 +62,6 @@ function wq_aimain {
 Set-Alias -Name wq_aim -Value wq_aimain
 
 
-function wq_clear {
-    param (
-        [string[]]$strings
-    )
-    $strings | foreach-object { [int]$_.replace(',', '').replace('，', '').replace('￥', '').replace(' ', '') }
-}
-Set-Alias -Name wq_cl -Value wq_clear
-
-
 function wq_checkvenv {
     $check = Get-ChildItem env: | Where-Object { $_.name -like '*venv*' -or $_.value -like '*venv*' }
     if ($check) { Write-Host "(venv status)" -ForegroundColor Yellow; $check }else { Write-Host "(venv status is null)" -ForegroundColor Yellow }
@@ -84,8 +74,6 @@ function wq_restart {
     [System.Environment]::Exit(0)
 }
 Set-Alias -Name wq_rs -Value wq_restart
-
-
 
 
 
@@ -138,12 +126,13 @@ Set-Alias -Name wq_aiw -Value wq_aiwork
 
 
 function wq_init {
-    & $PSScriptRoot\init.ps1
+    $ROOT = Split-Path(Split-Path $PSScriptRoot -Parent) -Parent
+    & $Root\boot\pwsh\init.ps1
 }
 Set-Alias -Name wq_it -Value wq_init
 
 function wq_gt {
-    wq_home; git status
+    wq_prs; git status
 }
 
 function wq_explorer {
