@@ -16,3 +16,11 @@ fc(){
             }'
         done
 }
+
+hl(){
+    if [[ -z "$*" ]];then
+        cat $HOME/wq/prs/lib/bash/core.sh|grep -oP '^.+(?=\(\){$)'|column -x
+    else
+        cat $HOME/wq/prs/lib/bash/core.sh|sed -n "/^$*(){/,/^}/p"
+    fi
+}

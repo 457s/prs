@@ -1,11 +1,11 @@
-﻿function wq_help {
+﻿function _help {
     param(
         [string]$name
     )
     if ($name ) {
-        if ($name -match '_') { Get-Help $name -Full }else { Get-Help "wq_$name" -Full }
+        if ($name -match '_') { Get-Help $name -Full }else { Get-Help "_$name" -Full }
     }
-    else { Get-Command -Module wq ; Get-Alias | Where-Object { $_.Source -eq 'wq' } }
+    else { Get-Command -Module core ; Get-Alias | Where-Object { $_.Source -eq 'wq' } }
 }
 Set-Alias -Name wq_hl -Value wq_help
 
