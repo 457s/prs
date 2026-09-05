@@ -19,8 +19,8 @@ fc(){
 
 hl(){
     if [[ -z "$*" ]];then
-        cat $HOME/wq/prs/lib/bash/core.sh|grep -oP '^.+(?=\(\){$)'|column -x
+        cat $HOME/core/prs/bash/lib/core.sh|grep -oP '^.+(?=\(\){$)'|column -x
     else
-        cat $HOME/wq/prs/lib/bash/core.sh|sed -n "/^$*(){/,/^}/p"
+        cat $HOME/core/prs/bash/lib/core.sh|sed -n "/^$*(){/,/^}/p"
     fi
 }

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-. $HOME/wq/prs/lib/bash/core.sh
+. $HOME/core/prs/bash/lib/core.sh
 
 main(){
     subcommand=$1
