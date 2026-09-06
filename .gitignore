@@ -1,8 +1,11 @@
 .*
-!.gitignore
-!.gitkeep
 _*
 
 /ofai/works/*
+!/ofai/works/.gitkeep
+
 /ofme/backup/*
+!/ofme/backup/.gitkeep
+
 /ofme/sandbox/*
+!/ofme/sandbox/.gitkeep
