@@ -91,7 +91,7 @@ function aiw {
                 $c = 0; $e = '!' ; do { $c++; $file_path = Join-Path $dest_folder_path (($e * $c) + $file_name) }while (Test-Path $file_path);
                 Copy-Item -Path $_ -Destination  $file_path 
             } }
-        wq_aispace
+        ais
     }
     else { Write-Host 'please input the paths of files you want to copy' }
 }
