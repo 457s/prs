@@ -27,11 +27,11 @@ git clone https://github.com/457s/prs.git $HOME/core/prs
 
 # 目录介绍
 
-| dir  | description |
-| :--: | :---------: |
-| bash |  终端配置   |
-| pwsh |  终端配置   |
-| ofme |  个人开发   |
-| ofai |   AI开发    |
-| env  |  环境变量   |
-| bin  |  命令文件   |
+| dir  |   desc   |
+| :--: | :------: |
+| bash | 终端配置 |
+| pwsh | 终端配置 |
+| ofme | 个人开发 |
+| ofai |  AI开发  |
+| env  | 环境变量 |
+| bin  | 命令文件 |
