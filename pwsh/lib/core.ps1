@@ -2,76 +2,64 @@
     param(
         [string]$name
     )
-    if ($name -eq $null -or $name -eq "") {
+    if (-not $name) {
         Get-Content $HOME\core\prs\pwsh\lib\core.ps1 |
-        ForEach-Object { [regex]::Match($_, "^function(.+){$").Groups[1].Value } |Where-Object{$_}|Sort-Object
+        ForEach-Object { [regex]::Match($_, "^function(.+){$").Groups[1].Value } | Where-Object { $_ } | Sort-Object
     }
     else {
+        Write-Host $name -ForegroundColor Yellow
         (Get-Command $name).Definition
     }
 }
 
-function prs {
+function pr {
     Set-Location $HOME\core\prs
     try { & .\.venv\scripts\activate.ps1 }catch {}
 }
 
-function mi {
-    Set-Location $HOME\core\prs\mine
+function me {
+    Set-Location $HOME\core\prs\ofme
     try { & .\.venv\scripts\activate.ps1 }catch {}
 }
-
 
 function ai {
-    Set-Location $HOME\core\prs\ai
+    Set-Location $HOME\core\prs\ofai
     try { & .\.venv\scripts\activate.ps1 }catch {}
 }
 
-
-
-function prss {
-    prs; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
+function prs {
+    pr; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
 }
 
-
-function mis {
-    mi; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
+function mes {
+    me; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
 }
-
 
 function ais {
     ai; Get-ChildItem -File | Where-Object { $_.Extension -eq '.code-workspace' } | ForEach-Object { explorer.exe $_.FullName }
 }
 
-
-function pym {
+function pm {
     python .\main.py
 }
 
-
-
-function mim {
-    mi; pym
+function mem {
+    me; pm
 }
-
 
 function aim {
-    ai; pym
+    ai; pm
 }
-
 
 function cv {
     $check = Get-ChildItem env: | Where-Object { $_.name -like '*venv*' -or $_.value -like '*venv*' }
     if ($check) { Write-Host "(venv status)" -ForegroundColor Yellow; $check }else { Write-Host "(venv status is null)" -ForegroundColor Yellow }
 }
 
-
 function rs {
     Start-Process pwsh -NoNewWindow -UseNewEnvironment -ArgumentList '-noexit', '-command', "write-host;pws cv"
     [System.Environment]::Exit(0)
 }
-
-
 
 function qw {
     ollama list | ForEach-Object { $_.Split(' ')[0] } | Select-Object -Skip 1 | ForEach-Object { $module = @{}; $c = 0 } { $c++; $module["id_$c"] = $_ } { $module } 
@@ -79,7 +67,6 @@ function qw {
     Write-Host "`n>$($module["id_$id"])<"
     ollama run $module["id_$id"]
 }
-
 
 function aiw {
     param(
@@ -93,7 +80,7 @@ function aiw {
     }
     else { $dest_folder_name = Get-Date -Format "yy年MM月dd日HH时mm分ss秒" }
     if ($file_paths) {
-        $dest_folder_path_old = "$HOME\core\prs\ai\works\$dest_folder_name"
+        $dest_folder_path_old = "$HOME\core\prs\ofai\works\$dest_folder_name"
         if (Test-Path $dest_folder_path_old) { $c = 0; $e = '!'; do { $c++; $dest_folder_path = $dest_folder_path_old + ($e * $c) }while (Test-Path $dest_folder_path) }
         else { $dest_folder_path = $dest_folder_path_old }
         New-Item -ItemType Directory -Path $dest_folder_path
@@ -109,17 +96,14 @@ function aiw {
     else { Write-Host 'please input the paths of files you want to copy' }
 }
 
-
-
 function it {
     & $HOME\core\prs\pwsh\init.ps1
     rs
 }
 
-function gt {
-    prs; git status
+function prg {
+    pr; git status
 }
-
 
 function er {
     param(
