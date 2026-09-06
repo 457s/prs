@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"python.terminal.activateEnvironment": true,
-		"git.openRepositoryInParentFolders": "always"
+		"git.openRepositoryInParentFolders": "always",
+		"terminal.integrated.defaultProfile.windows": "PowerShell"
 	}
 }
