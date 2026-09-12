@@ -3,10 +3,5 @@
 		{
 			"path": "."
 		}
-	],
-	"settings": {
-		"python.terminal.activateEnvironment": false,
-		"git.openRepositoryInParentFolders": "always",
-		"terminal.integrated.defaultProfile.windows": "PowerShell"
-	}
+	]
 }
