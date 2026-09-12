@@ -1,7 +1,7 @@
 # 提示符
 function prompt {
     Write-Host "PS " -NoNewline -ForegroundColor Green
-    Write-Host $executionContext.SessionState.Path.CurrentLocation -NoNewline -ForegroundColor Blue
+    Write-Host $executionContext.SessionState.Path.CurrentLocation -NoNewline -ForegroundColor Cyan
     Write-Host "> " -NoNewline
     " "
 }
